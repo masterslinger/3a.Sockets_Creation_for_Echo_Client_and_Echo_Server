@@ -1,8 +1,4 @@
 # 3a.CREATION FOR ECHO CLIENT AND ECHO SERVER USING TCP SOCKETS
-```
-Name: Syed Abu Hanifa. L
-Reg.no: 212224040346
-```
 # AIM
 To write a python program for creating Echo Client and Echo Server using TCP
 Sockets Links.
@@ -13,28 +9,12 @@ Sockets Links.
  server .
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
-CLIENT
+### server
 ```
 import socket
 
-HOST = '192.168.31.54'  
-PORT = 64856
-
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
-    client_socket.connect((HOST, PORT))
-
-    message = 'Hello, Server!'
-    client_socket.sendall(message.encode('utf-8'))
-
-    data = client_socket.recv(1024)
-    print(f"Received echo: {data.decode('utf-8')}")
-```
-SERVER
-```
-import socket
-
-HOST = '192.168.31.54'  
-PORT = 64856        
+HOST = '127.0.0.1'  
+PORT = 65432        
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
     server_socket.bind((HOST, PORT))
@@ -52,13 +32,29 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
                 conn.sendall(data)
                 print(f"Echoed: {data.decode('utf-8')}")
 ```
+### client
+```
+
+import socket
+
+HOST = '127.0.0.1'  
+PORT = 65432  
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+    client_socket.connect((HOST, PORT))
+
+    message = 'Hello, Server!'
+    client_socket.sendall(message.encode('utf-8'))
+
+    data = client_socket.recv(1024)
+    print(f"Received echo: {data.decode('utf-8')}")
+
+```
 ## OUPUT
-<img width="1063" height="503" alt="image" src="https://github.com/user-attachments/assets/4fee2463-eb38-4a71-97e2-975fc5fb0cc9" />
 
-<img width="1071" height="763" alt="Screenshot 2025-09-24 100024" src="https://github.com/user-attachments/assets/4ef4dd92-9c67-46d0-a0fe-9ba9f94b7618" />
+<img width="788" height="278" alt="Screenshot 2025-09-17 101840" src="https://github.com/user-attachments/assets/7df40d4e-6674-40b6-885b-ff83a60e7753" />
 
-<img width="1040" height="94" alt="Screenshot 2025-09-24 101609" src="https://github.com/user-attachments/assets/650bf796-4dc2-4e94-bd35-5ff2137e0ff3" />
-<img width="1033" height="178" alt="Screenshot 2025-09-24 102025" src="https://github.com/user-attachments/assets/6ef5c815-7815-458c-ae07-f206151da6cc" />
+<img width="748" height="277" alt="Screenshot 2025-09-17 101832" src="https://github.com/user-attachments/assets/364b9b28-e95a-4c3a-a466-6fcbc72591a6" />
 
 ## RESULT
 Thus, the python program for creating Echo Client and Echo Server using TCP Sockets Links 
