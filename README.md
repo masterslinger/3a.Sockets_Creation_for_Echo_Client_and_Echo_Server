@@ -10,7 +10,7 @@ Sockets Links.
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
 ### server
-```
+``` python
 import socket
 
 HOST = '127.0.0.1'  
@@ -33,7 +33,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
                 print(f"Echoed: {data.decode('utf-8')}")
 ```
 ### client
-```
+``` python
 
 import socket
 
